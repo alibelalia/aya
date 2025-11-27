@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>آية — Something Trend Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --card: #111827;
+      --accent: #f5f0e1; /* أبيض كريمي */
+      --accent-dark: #a68b6b; /* بني */
+      --glass: rgba(255,255,255,0.05);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Cairo',system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{background:radial-gradient(1000px 600px at 10% 10%, rgba(255,255,255,0.03), transparent), linear-gradient(180deg,var(--bg1),#071024);color:#e6eef8;display:flex;align-items:center;justify-content:center;padding:28px;overflow-x:hidden;}
+    .wrap{width:100%;max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:start}
+    @media(max-width:880px){.wrap{grid-template-columns:1fr;}}
+
+    .hero{background:linear-gradient(180deg, rgba(245,240,225,0.1), rgba(245,240,225,0.05));padding:28px;border-radius:18px;box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);border:1px solid rgba(245,240,225,0.2);transition: transform 0.4s ease;}
+    .hero:hover{transform: translateY(-8px) scale(1.02);}
+
+    .top-row{display:flex;gap:14px;align-items:center}
+    .avatar{width:86px;height:86px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:40px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));box-shadow:0 6px 18px rgba(166,139,107,0.6);transition: transform 0.3s ease;}
+    .avatar:hover{transform: rotate(-10deg) scale(1.1);}
+    .title{flex:1}
+    .title h1{margin:0;font-size:22px;font-weight:700;color:var(--accent)}
+    .title p{margin:6px 0 0;color:#bcd3ef;opacity:0.9}
+
+    .mood-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .chip{background:var(--glass);padding:10px 12px;border-radius:12px;font-weight:600;color:#dbeeff;border:1px solid rgba(245,240,225,0.2);transition: transform 0.3s ease, background 0.3s ease;cursor:pointer;}
+    .chip:hover{transform: translateY(-4px) scale(1.05);background:rgba(245,240,225,0.15);}
+
+    .meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .meta{background:linear-gradient(180deg, rgba(245,240,225,0.05), transparent);padding:14px;border-radius:12px;border:1px solid rgba(245,240,225,0.1);transition: transform 0.3s ease;}
+    .meta:hover{transform: translateY(-5px) scale(1.02);}
+    .meta h3{margin:0;font-size:13px;color:#dbeeff;opacity:0.95}
+    .meta p{margin:6px 0 0;font-weight:700;color:var(--accent-dark)}
+
+    .side{position:relative;padding:22px;border-radius:14px;background:linear-gradient(180deg, rgba(245,240,225,0.05), rgba(245,240,225,0.02));border:1px solid rgba(245,240,225,0.1);transition: transform 0.4s ease;}
+    .side:hover{transform: translateY(-6px) scale(1.02);}
+    .clock{font-family:monospace;font-size:44px;text-align:center;margin-bottom:8px;transition: color 0.5s ease;}
+    .small{font-size:13px;color:#cfe6ff;text-align:center;margin-bottom:14px}
+    .duck{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;background:linear-gradient(90deg,rgba(166,139,107,0.07), transparent);border:1px solid rgba(166,139,107,0.12);transition: transform 0.3s ease;}
+    .duck:hover{transform: translateY(-4px) scale(1.05);}
+
+    .moon{position:absolute;right:-60px;top:-70px;width:220px;height:220px;border-radius:50%;background:linear-gradient(180deg,#f5f0e120,#f5f0e1);filter:blur(24px);opacity:0.06;pointer-events:none;animation: floatMoon 6s ease-in-out infinite;}
+    @keyframes floatMoon{0%,100%{transform: translateY(0);}50%{transform: translateY(-10px);}}
+
+    .confetti{position:absolute;left:10px;top:8px;width:40px;height:40px}
+
+    .cta{display:flex;gap:10px;margin-top:16px}
+    button{cursor:pointer;padding:10px 14px;border-radius:10px;border:0;font-weight:700;transition: transform 0.3s ease;}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#dbeeff}
+    .btn-outline:hover{transform: scale(1.08);}
+    .btn-primary{background:var(--accent-dark);color:white}
+    .btn-primary:hover{transform: scale(1.08);}
+
+    .footer{font-size:12px;color:#aecbe8;margin-top:18px}
+
+    .pulse{animation:pulse 3s infinite}
+    @keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.02);opacity:0.95}100%{transform:scale(1);opacity:1}}
+
+    .meta-grid .meta{direction:rtl}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="top-row">
+        <div class="avatar">آي</div>
+        <div class="title">
+          <h1>آية — Something Trend</h1>
+          <p>عرض مُختصر لإجابات آية — صممناه مخصوص علشان تنبهر 😌</p>
+        </div>
+        <div style="text-align:center">
+          <div class="confetti">🎉</div>
+        </div>
+      </div>
+
+      <div class="mood-row">
+        <div class="chip">شعور: الأمان</div>
+        <div class="chip">فصل: الشتاء</div>
+        <div class="chip">حيوان: بطة 🦆</div>
+        <div class="chip">لون: أبيض كريمي / بني</div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta">
+          <h3>ساعة</h3>
+          <p>00:00</p>
+        </div>
+        <div class="meta">
+          <h3>يوم</h3>
+          <p>الاثنين</p>
+        </div>
+        <div class="meta">
+          <h3>شهر</h3>
+          <p>أكتوبر</p>
+        </div>
+        <div class="meta">
+          <h3>كوكب</h3>
+          <p>القمر 🌙</p>
+        </div>
+      </div>
+
+      <div class="footer">اجعل البوست خاص بك: التقط صورة للشاشة وشاركه على تيك توك، إنستغرام، أو ستوري واتساب.</div>
+    </section>
+
+    <aside class="side">
+      <div class="moon"></div>
+      <div class="clock pulse" id="clock">00:00</div>
+      <div class="small">الوقت الذي اختارت آية — 00:00</div>
+
+      <div class="duck" style="margin-bottom:12px">
+        <div style="font-size:26px">🦆</div>
+        <div>
+          <div style="font-weight:700">بطة</div>
+          <div style="font-size:13px;color:#cfe6ff;opacity:0.85">حيوان آية المفضل — لطيف ومهرب :)</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:12px;color:#cfe6ff">المزاج</div>
+          <div style="font-weight:800;font-size:18px;margin-top:6px">الأمان</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:12px;color:#cfe6ff">اللون المفضل</div>
+          <div style="margin-top:6px;padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-dark));">أبيض كريمي / بني</div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <button class="btn-primary" id="surpriseBtn">اجعلها تتفاجأ ✨</button>
+        <button class="btn-outline" id="copyBtn">انسخ البايو</button>
+      </div>
+
+      <div class="footer" style="margin-top:10px">مصمّم مخصوص للترند — افتح هذا الملف على موبايلك أو كمبيوترك وشارك النتيجة!</div>
+    </aside>
+  </div>
+
+  <script>
+    const bioText = `آية — 00:00 | الاثنين | أكتوبر | القمر | الأمان | بطة | الشتاء | أبيض كريمي / بني`;
+
+    document.getElementById('copyBtn').addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(bioText);
+        alert('تم نسخ البايو! ألصقه في أي مكان');
+      } catch(e){
+        alert('نسخ فشل — انسخ هذا يدويًا:\\n'+bioText);
+      }
+    });
+
+    document.getElementById('surpriseBtn').addEventListener('click', ()=>{
+      const count = 30;
+      for(let i=0;i<count;i++){
+        const el = document.createElement('div');
+        el.textContent = ['✨','🎉','🌙','🦆','💫','🌟'][Math.floor(Math.random()*6)];
+        el.style.position='fixed';
+        el.style.fontSize = Math.floor(Math.random()*30+16)+'px';
+        el.style.right = Math.floor(Math.random()*90+10)+'px';
+        el.style.top = Math.floor(Math.random()*60+20)+'px';
+        el.style.opacity='0';
+        el.style.transition='transform 1400ms ease-out, opacity 1400ms ease-out';
+        document.body.appendChild(el);
+        requestAnimationFrame(()=>{
+          el.style.opacity='1';
+          el.style.transform = `translateY(${Math.random()*500+150}px) rotate(${Math.random()*720-360}deg)`;
+        });
+        setTimeout(()=>{el.style.opacity='0';},1400);
+        setTimeout(()=>{el.remove();},2000);
+      }
+    });
+
+    const clock = document.getElementById('clock');
+    setInterval(()=>{
+      clock.style.color = `hsl(${Math.floor(Math.random()*360)},70%,85%)`;
+      clock.style.transform = `translateY(${Math.random()*4-2}px) rotate(${Math.random()*10-5}deg)`;
+    },800);
+  </script>
+</body>
+</html>
