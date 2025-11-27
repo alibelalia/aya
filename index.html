@@ -1,156 +1,187 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Secret Page</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آية — Something Trend</title>
 <style>
-/* الصفحة الكاملة */
-body,html{margin:0;padding:0;height:100%;font-family:'Cairo',sans-serif;overflow:hidden;background:#0f172a;}
-#entryPage,#mainPage{position:absolute;width:100%;height:100%;top:0;left:0;transition:opacity 0.8s;}
-#entryPage{display:flex;flex-direction:column;justify-content:center;align-items:center;color:#f5f0e1;background:#0f172a;}
-#entryPage input{padding:12px 18px;border-radius:10px;border:none;margin-top:20px;font-size:18px;}
-#entryPage button{padding:12px 18px;margin-top:12px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;background:#a68b6b;color:white;font-size:16px;transition:transform 0.3s;}
-#entryPage button:hover{transform:scale(1.08);}
-#mainPage{opacity:0;pointer-events:none;}
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #0f172a; /* الخلفية كما هي */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #f5f0e1;
+  overflow-x: hidden;
+}
 
-/* --- كود الموقع المذهل --- */
-:root{--bg1:#0f172a;--accent:#f5f0e1;--accent-dark:#a68b6b;}
-.wrap{display:grid;grid-template-columns:1fr 420px;gap:20px;max-width:950px;margin:auto;height:100%;align-items:start;}
-.hero, .side{background:linear-gradient(180deg, rgba(245,240,225,0.05), rgba(245,240,225,0.01));border-radius:18px;padding:25px;border:1px solid rgba(245,240,225,0.15);box-shadow:0 12px 24px rgba(2,6,23,0.6);backdrop-filter:blur(6px);}
-.avatar{width:90px;height:90px;border-radius:20px;background:linear-gradient(135deg, var(--accent), var(--accent-dark));display:flex;align-items:center;justify-content:center;font-size:42px;color:#fff;box-shadow:0 6px 18px rgba(166,139,107,0.6);}
-.mood-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
-.chip{background:rgba(255,255,255,0.05);padding:10px 12px;border-radius:14px;color:#dbeeff;font-weight:600;border:1px solid rgba(245,240,225,0.2);}
-.meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px;}
-.meta{background:linear-gradient(180deg, rgba(245,240,225,0.05), transparent);padding:14px;border-radius:12px;border:1px solid rgba(245,240,225,0.1);}
-.side .clock{font-family:monospace;font-size:46px;text-align:center;margin-bottom:8px;transition: color 0.5s ease, transform 0.5s ease;}
-.side .small{font-size:13px;color:#cfe6ff;text-align:center;margin-bottom:14px;}
-.duck{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;background:linear-gradient(90deg,rgba(166,139,107,0.07), transparent);border:1px solid rgba(166,139,107,0.12);}
-.cta{display:flex;gap:10px;margin-top:16px;}
-button{cursor:pointer;padding:10px 14px;border-radius:10px;border:0;font-weight:700;}
-.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#dbeeff;}
-.btn-primary{background:var(--accent-dark);color:white;}
-.moon{position:absolute;right:-60px;top:-70px;width:220px;height:220px;border-radius:50%;background:linear-gradient(180deg,#f5f0e120,#f5f0e1);filter:blur(26px);opacity:0.07;pointer-events:none;animation: floatMoon 6s ease-in-out infinite alternate;}
-@keyframes floatMoon{0%{transform:translateY(0);}50%{transform:translateY(-12px);}100%{transform:translateY(0);}}
-.star{position:absolute;color:#fff;font-size:12px;opacity:0.8;animation: starTwinkle 2s infinite alternate;}
-@keyframes starTwinkle{0%{opacity:0.3;}50%{opacity:1;}100%{opacity:0.3;}}
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 20px;
+  max-width: 950px;
+  width: 100%;
+}
+
+.hero, .side {
+  background: linear-gradient(180deg, rgba(245,240,225,0.05), rgba(245,240,225,0.01));
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid rgba(245,240,225,0.15);
+  box-shadow: 0 12px 24px rgba(2,6,23,0.6);
+  backdrop-filter: blur(6px);
+  transition: transform 0.4s ease;
+  position: relative;
+}
+.hero:hover, .side:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f5f0e1, #a68b6b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(166,139,107,0.6);
+  transition: transform 0.3s ease;
+}
+.avatar:hover { transform: rotate(-10deg) scale(1.1); }
+
+.title h1 { color: #f5f0e1; font-size: 24px; margin-bottom: 4px; }
+.title p { color: #bcd3ef; opacity: 0.9; font-size: 14px; }
+
+.mood-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.chip {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: #dbeeff;
+  font-weight: 600;
+  border: 1px solid rgba(245,240,225,0.2);
+  transition: transform 0.3s ease;
+}
+.chip:hover { transform: translateY(-3px) scale(1.05); }
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.meta {
+  background: linear-gradient(180deg, rgba(245,240,225,0.05), transparent);
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(245,240,225,0.1);
+  transition: transform 0.3s ease;
+}
+.meta:hover { transform: translateY(-4px) scale(1.03); }
+.meta h3 { margin:0; font-size:13px; color:#dbeeff; opacity:0.95; }
+.meta p { margin:6px 0 0; font-weight:700; color:#a68b6b; }
+
+.side .clock {
+  font-family: monospace;
+  font-size: 46px;
+  text-align: center;
+  margin-bottom: 8px;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+.side .small { font-size:13px; color:#cfe6ff; text-align:center; margin-bottom:14px; }
+
+.duck {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(166,139,107,0.07), transparent);
+  border: 1px solid rgba(166,139,107,0.12);
+  transition: transform 0.3s ease;
+}
+.duck:hover { transform: translateY(-5px) scale(1.05); }
+
+.cta { display: flex; gap:10px; margin-top:16px; }
+button { cursor: pointer; padding:10px 14px; border-radius:10px; border:0; font-weight:700; transition: transform 0.3s ease; }
+.btn-outline { background: transparent; border:1px solid rgba(255,255,255,0.08); color:#dbeeff; }
+.btn-outline:hover { transform: scale(1.08); }
+.btn-primary { background: #a68b6b; color: white; }
+.btn-primary:hover { transform: scale(1.08); }
+
+.moon {
+  position:absolute;
+  right:-60px;
+  top:-70px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background: linear-gradient(180deg,#f5f0e120,#f5f0e1);
+  filter: blur(26px);
+  opacity:0.07;
+  pointer-events:none;
+  animation: floatMoon 6s ease-in-out infinite alternate;
+}
+@keyframes floatMoon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 </style>
 </head>
 <body>
-
-<!-- صفحة السؤال -->
-<div id="entryPage">
-  <h1 style="font-size:28px;text-align:center;">Who is the most beautiful girl in the world?</h1>
-  <input type="text" id="answerInput" placeholder="Type her name..."/>
-  <button id="submitBtn">Submit</button>
-</div>
-
-<!-- الصفحة المذهلة -->
-<div id="mainPage">
 <div class="wrap">
-<section class="hero">
-  <div style="display:flex;align-items:center;gap:14px;">
-    <div class="avatar">آي</div>
-    <div class="title">
-      <h1>آية — Something Trend</h1>
-      <p>عرض مذهل متحرك للأجوبة — مخصوص لتنقلب العقل 😍</p>
+  <section class="hero">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div class="avatar">آي</div>
+      <div class="title">
+        <h1>آية — Something Trend</h1>
+        <p>عرض بسيط وجميل متحرك للعناصر</p>
+      </div>
     </div>
-  </div>
-  <div class="mood-row">
-    <div class="chip">شعور: الأمان</div>
-    <div class="chip">فصل: الشتاء</div>
-    <div class="chip">حيوان: بطة 🦆</div>
-    <div class="chip">لون: أبيض كريمي / بني</div>
-  </div>
-  <div class="meta-grid">
-    <div class="meta"><h3>ساعة</h3><p>00:00</p></div>
-    <div class="meta"><h3>يوم</h3><p>الاثنين</p></div>
-    <div class="meta"><h3>شهر</h3><p>أكتوبر</p></div>
-    <div class="meta"><h3>كوكب</h3><p>القمر 🌙</p></div>
-  </div>
-</section>
-
-<aside class="side">
-  <div class="moon"></div>
-  <div class="clock" id="clock">00:00</div>
-  <div class="small">الوقت الذي اختارت آية — 00:00</div>
-  <div class="duck" style="margin-bottom:12px;">
-    <div style="font-size:26px;">🦆</div>
-    <div>
-      <div style="font-weight:700;">بطة</div>
-      <div style="font-size:13px;color:#cfe6ff;opacity:0.85;">حيوان آية المفضل — لطيف ومهرب :)</div>
+    <div class="mood-row">
+      <div class="chip">شعور: الأمان</div>
+      <div class="chip">فصل: الشتاء</div>
+      <div class="chip">حيوان: بطة 🦆</div>
+      <div class="chip">لون: أبيض كريمي / بني</div>
     </div>
-  </div>
-  <div class="cta">
-    <button class="btn-primary" id="surpriseBtn">اجعلها تتفاجأ ✨</button>
-    <button class="btn-outline" id="copyBtn">انسخ البايو</button>
-  </div>
-</aside>
+    <div class="meta-grid">
+      <div class="meta"><h3>ساعة</h3><p>00:00</p></div>
+      <div class="meta"><h3>يوم</h3><p>الاثنين</p></div>
+      <div class="meta"><h3>شهر</h3><p>أكتوبر</p></div>
+      <div class="meta"><h3>كوكب</h3><p>القمر 🌙</p></div>
+    </div>
+  </section>
+
+  <aside class="side">
+    <div class="moon"></div>
+    <div class="clock" id="clock">00:00</div>
+    <div class="small">الوقت الذي اختارت آية — 00:00</div>
+    <div class="duck">
+      <div style="font-size:26px;">🦆</div>
+      <div>
+        <div style="font-weight:700;">بطة</div>
+        <div style="font-size:13px;color:#cfe6ff;opacity:0.85;">حيوان آية المفضل</div>
+      </div>
+    </div>
+    <div class="cta">
+      <button class="btn-primary" id="surpriseBtn">اجعلها تتفاجأ ✨</button>
+      <button class="btn-outline" id="copyBtn">انسخ البايو</button>
+    </div>
+  </aside>
 </div>
-</div>
 
-<script>
-// صفحة السؤال
-const entryPage=document.getElementById('entryPage');
-const mainPage=document.getElementById('mainPage');
-document.getElementById('submitBtn').addEventListener('click',()=>{
-  const val=document.getElementById('answerInput').value.trim().toLowerCase();
-  if(val==='aya'){
-    entryPage.style.opacity='0';
-    setTimeout(()=>{
-      entryPage.style.display='none';
-      mainPage.style.opacity='1';
-      mainPage.style.pointerEvents='auto';
-    },800);
-  }else{
-    alert('Wrong! Try again 🙂');
-  }
-});
-
-// ساعة ديناميكية
-const clock = document.getElementById('clock');
-setInterval(()=>{
-  const now = new Date();
-  clock.textContent = now.getHours().toString().padStart(2,'0')+":"+now.getMinutes().toString().padStart(2,'0');
-  clock.style.color = `hsl(${Math.floor(Math.random()*360)},70%,85%)`;
-  clock.style.transform = `translateY(${Math.random()*4-2}px) rotate(${Math.random()*8-4}deg)`;
-},1000);
-
-// نسخ البايو
-const bioText = `آية — 00:00 | الاثنين | أكتوبر | القمر | الأمان | بطة | الشتاء | أبيض كريمي / بني`;
-document.getElementById('copyBtn').addEventListener('click', async()=>{
-  try{await navigator.clipboard.writeText(bioText);alert('تم نسخ البايو!');}catch(e){alert('انسخ يدويًا:\\n'+bioText);}
-});
-
-// مفاجأة confetti
-document.getElementById('surpriseBtn').addEventListener('click',()=>{
-  for(let i=0;i<30;i++){
-    const el = document.createElement('div');
-    el.textContent=['✨','🎉','🌙','🦆','💫','🌟'][Math.floor(Math.random()*6)];
-    el.style.position='fixed';
-    el.style.fontSize=Math.floor(Math.random()*30+16)+'px';
-    el.style.right=Math.floor(Math.random()*90+10)+'px';
-    el.style.top=Math.floor(Math.random()*60+20)+'px';
-    el.style.opacity='0';
-    el.style.transition='transform 1400ms ease-out, opacity 1400ms ease-out';
-    document.body.appendChild(el);
-    requestAnimationFrame(()=>{el.style.opacity='1'; el.style.transform=`translateY(${Math.random()*500+150}px) rotate(${Math.random()*720-360}deg)`;});
-    setTimeout(()=>{el.style.opacity='0';},1400);
-    setTimeout(()=>{el.remove();},2000);
-  }
-});
-
-// نجوم متلألئة
-for(let i=0;i<50;i++){
-  const star=document.createElement('div');
-  star.className='star';
-  star.textContent='✦';
-  star.style.left=Math.random()*window.innerWidth+'px';
-  star.style.top=Math.random()*window.innerHeight+'px';
-  star.style.animationDuration=(1+Math.random()*2)+'s';
-  document.body.appendChild(star);
-}
-</script>
+<!-- ربط ملف JS -->
+<script src="script.js"></script>
 </body>
 </html>
